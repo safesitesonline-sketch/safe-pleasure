@@ -2,6 +2,7 @@
 const WA_NUMBER = "2348127297983";
 
 (function () {
+  // 18+ gate
   const gate = document.getElementById("gate");
   let ok = false;
   try { ok = localStorage.getItem("sp18") === "1"; } catch (e) {}
@@ -15,7 +16,8 @@ const WA_NUMBER = "2348127297983";
   document.getElementById("leave").onclick = () => { location.href = "https://www.google.com"; };
   document.getElementById("yr").textContent = new Date().getFullYear();
 
-  const f = document.querySelector("form#applyForm");
+  // Contact form -> WhatsApp
+  const f = document.getElementById("applyForm");
   const msg = document.getElementById("formMsg");
   const clean = (s) => String(s || "").replace(/[\r\n]+/g, " ").trim().slice(0, 300);
 
@@ -32,4 +34,42 @@ const WA_NUMBER = "2348127297983";
       "\nCity: " + clean(d.city) + "\nLooking for: " + clean(d.want) + "\nMessage: " + clean(d.note);
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
   });
+
+  // Highlight the active tab while scrolling
+  const tabs = Array.from(document.querySelectorAll(".tabbar a"));
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          tabs.forEach((t) => t.classList.toggle("on", t.getAttribute("href") === "#" + en.target.id));
+        }
+      });
+    }, { rootMargin: "-40% 0px -50% 0px" });
+    ["home", "how", "safety", "apply"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  }
+
+  // Install button (Android/Chrome)
+  let deferred = null;
+  const btn = document.getElementById("install");
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferred = e;
+    btn.hidden = false;
+  });
+  btn.addEventListener("click", async () => {
+    if (!deferred) return;
+    deferred.prompt();
+    await deferred.userChoice;
+    deferred = null;
+    btn.hidden = true;
+  });
+  window.addEventListener("appinstalled", () => { btn.hidden = true; });
+
+  // Offline support
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+  }
 })();

@@ -2,49 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Safe Pleasure | Adults 18+ Only</title>
-<meta name="description" content="A private, respectful space for consenting adult women who want a safe, discreet, no-strings connection. 18+ only.">
+<meta name="description" content="A private, respectful space for consenting adults. Safe, discreet, no strings. 18+ only.">
 <meta name="rating" content="RTA-5042-1996-1400-1577-RTA">
-<meta name="theme-color" content="#0f0710">
+<meta name="theme-color" content="#1b1020">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Safe Pleasure">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="gate"><div class="box">
 <img src="logo.svg" alt="Safe Pleasure">
 <h2>Adults only (18+)</h2>
-<p>This website is for adults. By entering you confirm you are 18 or older and that you are an adult who is comfortable viewing adult-oriented content.</p>
-<div class="row"><button class="btn" id="enter">I am 18+ — Enter</button><button class="btn alt" id="leave">Leave</button></div>
+<p>This space is for adults. By entering you confirm you are 18 or older and comfortable with adult-oriented content.</p>
+<div class="row"><button class="btn" id="enter">I am 18+ &mdash; Enter</button><button class="btn alt" id="leave">Leave</button></div>
 </div></div>
 
-<header>
-<img src="logo.svg" alt="Safe Pleasure logo">
-<nav><span class="badge">18+</span><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#apply">Connect</a></nav>
-</header>
+<div class="appbar">
+<img src="logo.svg" alt="Safe Pleasure">
+<div class="right"><button class="mini" id="install" hidden>Install app</button><span class="badge">18+</span></div>
+</div>
 
-<section class="hero">
-<h1>Connection on <em>your</em> terms.<br>Safe. Private. No strings.</h1>
-<p>Safe Pleasure is a personal, discreet space for consenting adult women who want a one-time experience or simple companionship, without emotional commitment and without pressure. Honest, respectful and your comfort comes first.</p>
+<main>
+<section id="home" class="hero">
+<span class="tag">Relax &middot; Connect &middot; Be yourself</span>
+<h1>Connection on <em>your</em> terms.</h1>
+<p>A calm, private space for consenting adult women who want a one-time experience or simple companionship, with no pressure and no strings. Your comfort always comes first.</p>
 <a class="btn" href="#apply">Say hello</a>
 </section>
 
 <section id="how">
 <h2>How it works</h2>
 <div class="grid">
-<div class="card"><h3>1. Say hello</h3><p>Send a short message using the form. No account, no payment, no public profile.</p></div>
-<div class="card"><h3>2. Chat first</h3><p>We talk, set expectations and boundaries, and you decide if you are comfortable.</p></div>
-<div class="card"><h3>3. Meet safely</h3><p>First meeting in a public place. You can change your mind at any time, for any reason.</p></div>
+<div class="card"><span class="ico">&#128172;</span><h3>1. Say hello</h3><p>Send a short message. No account, no payment, no public profile.</p></div>
+<div class="card"><span class="ico">&#127807;</span><h3>2. Chat first</h3><p>We talk, set expectations and boundaries, and you decide if it feels right.</p></div>
+<div class="card"><span class="ico">&#9749;</span><h3>3. Meet safely</h3><p>First meeting in a public place. You can change your mind any time, for any reason.</p></div>
 </div>
 </section>
 
 <section id="safety">
 <h2>Safety &amp; respect</h2>
 <div class="grid">
-<div class="card"><h3>Consent always</h3><p>Everything is clear, enthusiastic and mutual. "No" or "not sure" is always respected.</p></div>
-<div class="card"><h3>Protection</h3><p>Safer sex is non-negotiable. Health and protection are discussed openly.</p></div>
-<div class="card"><h3>Discretion</h3><p>Your details are never shared or posted. See the <a href="privacy.html">Privacy Policy</a>.</p></div>
-<div class="card"><h3>No money, ever</h3><p>This is not a paid service. Nobody is ever asked for money, gifts or transfers.</p></div>
+<div class="card"><span class="ico">&#129309;</span><h3>Consent always</h3><p>Everything is clear, enthusiastic and mutual. "No" or "not sure" is always respected.</p></div>
+<div class="card"><span class="ico">&#128737;</span><h3>Protection</h3><p>Safer sex is non-negotiable. Health and protection are discussed openly.</p></div>
+<div class="card"><span class="ico">&#128274;</span><h3>Discretion</h3><p>Your details are never shared or posted. See the <a href="privacy.html">Privacy Policy</a>.</p></div>
+<div class="card"><span class="ico">&#128683;</span><h3>No money, ever</h3><p>This is not a paid service. Nobody is ever asked for money, gifts or transfers.</p></div>
 </div>
 </section>
 
@@ -67,11 +75,19 @@
 <p id="formMsg" role="alert"></p>
 </form>
 </section>
+</main>
 
 <footer>
 <p>&copy; <span id="yr"></span> Safe Pleasure. For adults 18+ only. <a href="privacy.html">Privacy</a></p>
 <p>If you ever feel unsafe or pressured, stop and contact your local emergency services.</p>
 </footer>
+
+<nav class="tabbar" aria-label="Main">
+<a href="#home" class="on"><span>&#127968;</span>Home</a>
+<a href="#how"><span>&#127807;</span>How</a>
+<a href="#safety"><span>&#128737;</span>Safety</a>
+<a href="#apply"><span>&#128172;</span>Connect</a>
+</nav>
 <script src="app.js"></script>
 </body>
 </html>
