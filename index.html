@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Safe Pleasure | Adults 18+ Only</title>
+<meta name="description" content="A private, respectful space for consenting adult women who want a safe, discreet, no-strings connection. 18+ only.">
+<meta name="rating" content="RTA-5042-1996-1400-1577-RTA">
+<meta name="theme-color" content="#0f0710">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate"><div class="box">
+<img src="logo.svg" alt="Safe Pleasure">
+<h2>Adults only (18+)</h2>
+<p>This website is for adults. By entering you confirm you are 18 or older and that you are an adult who is comfortable viewing adult-oriented content.</p>
+<div class="row"><button class="btn" id="enter">I am 18+ — Enter</button><button class="btn alt" id="leave">Leave</button></div>
+</div></div>
+
+<header>
+<img src="logo.svg" alt="Safe Pleasure logo">
+<nav><span class="badge">18+</span><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#apply">Connect</a></nav>
+</header>
+
+<section class="hero">
+<h1>Connection on <em>your</em> terms.<br>Safe. Private. No strings.</h1>
+<p>Safe Pleasure is a personal, discreet space for consenting adult women who want a one-time experience or simple companionship, without emotional commitment and without pressure. Honest, respectful and your comfort comes first.</p>
+<a class="btn" href="#apply">Say hello</a>
+</section>
+
+<section id="how">
+<h2>How it works</h2>
+<div class="grid">
+<div class="card"><h3>1. Say hello</h3><p>Send a short message using the form. No account, no payment, no public profile.</p></div>
+<div class="card"><h3>2. Chat first</h3><p>We talk, set expectations and boundaries, and you decide if you are comfortable.</p></div>
+<div class="card"><h3>3. Meet safely</h3><p>First meeting in a public place. You can change your mind at any time, for any reason.</p></div>
+</div>
+</section>
+
+<section id="safety">
+<h2>Safety &amp; respect</h2>
+<div class="grid">
+<div class="card"><h3>Consent always</h3><p>Everything is clear, enthusiastic and mutual. "No" or "not sure" is always respected.</p></div>
+<div class="card"><h3>Protection</h3><p>Safer sex is non-negotiable. Health and protection are discussed openly.</p></div>
+<div class="card"><h3>Discretion</h3><p>Your details are never shared or posted. See the <a href="privacy.html">Privacy Policy</a>.</p></div>
+<div class="card"><h3>No money, ever</h3><p>This is not a paid service. Nobody is ever asked for money, gifts or transfers.</p></div>
+</div>
+</section>
+
+<section id="about">
+<h2>About me</h2>
+<div class="card"><p>I'm the one person behind Safe Pleasure: a healthy, respectful young man who believes adult connection should be honest, safe and drama-free. What you see here is what you get.</p></div>
+</section>
+
+<section id="apply">
+<h2>Connect with me</h2>
+<form id="applyForm" novalidate>
+<div><label for="name">Name or nickname</label><input id="name" name="name" maxlength="40" required autocomplete="nickname"></div>
+<div><label for="age">Your age (18+)</label><input id="age" name="age" type="number" min="18" max="99" required inputmode="numeric"></div>
+<div><label for="city">City / area</label><input id="city" name="city" maxlength="60" required></div>
+<div><label for="want">What are you looking for?</label>
+<select id="want" name="want"><option>A one-time meetup</option><option>Companionship</option><option>Not sure yet, let's chat</option></select></div>
+<div><label for="note">A short message (optional)</label><textarea id="note" name="note" rows="3" maxlength="300"></textarea></div>
+<label class="chk"><input type="checkbox" name="consent" value="1"><span>I am 18 or older, I am contacting you voluntarily, and I understand this is not a paid service.</span></label>
+<button class="btn" type="submit">Send via WhatsApp</button>
+<p id="formMsg" role="alert"></p>
+</form>
+</section>
+
+<footer>
+<p>&copy; <span id="yr"></span> Safe Pleasure. For adults 18+ only. <a href="privacy.html">Privacy</a></p>
+<p>If you ever feel unsafe or pressured, stop and contact your local emergency services.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

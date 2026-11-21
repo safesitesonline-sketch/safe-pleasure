@@ -1,0 +1,30 @@
+:root{--bg:#0f0710;--card:#1a0d1d;--wine:#e11d74;--gold:#e8c36a;--txt:#f4eaf3;--mut:#b9a6b8}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+body{font:16px/1.6 system-ui,sans-serif;background:radial-gradient(1000px 500px at 50% -10%,#3a0f2c,var(--bg));color:var(--txt)}
+body.locked{overflow:hidden}
+a{color:var(--gold)}
+header,section,footer{max-width:900px;margin:auto;padding:28px 20px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+header img{height:56px}
+nav a{margin-left:14px;text-decoration:none;color:var(--mut)}
+.badge{border:1px solid var(--gold);color:var(--gold);padding:2px 10px;border-radius:99px;font-size:13px}
+h1{font:700 clamp(2rem,6vw,3.4rem)/1.15 Georgia,serif;margin:14px 0}
+h1 em{color:var(--gold)}
+h2{font:700 1.7rem Georgia,serif;margin-bottom:14px;color:var(--gold)}
+.hero p{color:var(--mut);max-width:600px;margin-bottom:22px}
+.btn{display:inline-block;background:linear-gradient(135deg,#e11d74,#9b1450);color:#fff;border:0;padding:13px 26px;border-radius:99px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.alt{background:transparent;border:1px solid var(--mut);color:var(--txt)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid #3a2140;border-radius:16px;padding:18px}
+.card h3{margin-bottom:6px}.card p{color:var(--mut)}
+form{display:grid;gap:12px}
+label{font-size:14px;color:var(--mut)}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #4a2a50;background-color:#120814;color:var(--txt);font:inherit}
+.chk{display:flex;gap:10px;align-items:flex-start}.chk input{width:auto;margin-top:5px}
+#formMsg{color:#ff8fb8;min-height:22px}
+footer{color:var(--mut);font-size:14px;border-top:1px solid #2c1830;margin-top:20px}
+#gate{position:fixed;inset:0;z-index:99;background:#0f0710f2;display:flex;align-items:center;justify-content:center;padding:20px}
+#gate .box{max-width:440px;text-align:center;background:var(--card);border:1px solid var(--gold);border-radius:20px;padding:28px}
+#gate img{height:70px;margin-bottom:12px}#gate p{color:var(--mut);margin:12px 0 20px}
+#gate .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
