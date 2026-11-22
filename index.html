@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-pd3az8vlUoOOd+jEAgDTzXUM40m7ZRE73qy1OBqoKnA='; style-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Safe Pleasure | Adults 18+ Only</title>
 <meta name="description" content="A private, respectful space for consenting adults. Safe, discreet, no strings. 18+ only.">
@@ -75,7 +75,6 @@
 <span class="eyebrow">About</span>
 <h2>Hi, I'm Sugar.</h2>
 <div class="about rv">
-<div class="portrait"><img src="photo.jpg" alt="Sugar" loading="lazy" onerror="this.parentNode.hidden=true"></div>
 <div class="about-text">
 <p>I'm Sugar, based in Lagos. I started Safe Pleasure because adults deserve a way to connect that is honest, private and free of pressure.</p>
 <p>Before anything else, I want you to feel safe. We talk first, you decide the pace, and the first meeting is always somewhere public. You can say no, or stop, at any point, for any reason.</p>
@@ -100,8 +99,8 @@
 <span class="eyebrow">Questions</span>
 <h2>Good to know.</h2>
 <div class="faq rv">
-<details><summary>What happens when I tap "Send via WhatsApp"?</summary><p>WhatsApp opens with your message ready. Nothing is sent until you press send yourself.</p></details>
-<details><summary>Do you keep my details?</summary><p>There are no accounts and no database. Only the WhatsApp chat exists, and I will delete it on request.</p></details>
+<details><summary>How do I contact you?</summary><p>Open the Connect page and tap the SimpleX button. SimpleX never shows me your phone number.</p></details>
+<details><summary>Do you keep my details?</summary><p>There are no accounts and no database. Only the SimpleX chat exists, and I will delete it on request.</p></details>
 <details><summary>Does it cost anything?</summary><p>No. Safe Pleasure is free, and nobody is ever asked for money, gifts or transfers.</p></details>
 <details><summary>Do I have to meet?</summary><p>No. You can chat, ask questions, and decide later or not at all.</p></details>
 <details><summary>What if I change my mind?</summary><p>You can stop at any time, before or during a meeting, and you owe no explanation.</p></details>
@@ -123,23 +122,17 @@
 <section id="apply">
 <span class="eyebrow">Connect</span>
 <h2>Say hello.</h2>
-<form id="applyForm" novalidate>
-<div><label for="name">Name or nickname</label><input id="name" name="name" maxlength="40" required autocomplete="nickname"></div>
-<div><label for="age">Your age (18+)</label><input id="age" name="age" type="number" min="18" max="99" required inputmode="numeric"></div>
-<div><label for="city">City / area</label><input id="city" name="city" maxlength="60" required></div>
-<div><label for="want">What are you looking for?</label>
-<select id="want" name="want"><option>A one-time meetup</option><option>Companionship</option><option>Not sure yet, let's chat</option></select></div>
-<div><label for="note">A short message (optional)</label><textarea id="note" name="note" rows="3" maxlength="300"></textarea></div>
-<label class="chk"><input type="checkbox" name="consent" value="1"><span>I am 18 or older, I am contacting you voluntarily, and I understand this is not a paid service.</span></label>
-<button class="btn" type="submit">Send via WhatsApp</button>
-<p id="formMsg" role="alert"></p>
-</form>
+<div class="card">
+<p>The only official contact is SimpleX. It uses no phone number and no username, and messages auto-delete. I accept requests by hand, so it may take a while.</p><br>
+<p><a class="btn" href="connect.html">Connect privately</a></p><br>
+<p>Free, always. Nobody here ever asks for money, fares, deposits or gifts.</p>
+</div>
 </section>
 </main>
 
 <footer>
 <p class="flinks"><a href="safety-guide.html">Safety guide</a> &middot; <a href="consent-and-boundaries.html">Consent</a> &middot; <a href="casual-dating-without-pressure.html">Casual dating</a> &middot; <a href="faq.html">FAQ</a></p>
-<p>&copy; <span id="yr"></span> Safe Pleasure. For adults 18+ only. <a href="privacy.html">Privacy</a></p>
+<p>&copy; <span id="yr"></span> Safe Pleasure. For adults 18+ only. <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="connect.html">Connect</a> &middot; <a href="report.html">Report</a></p>
 <p>If you ever feel unsafe or pressured, stop and contact your local emergency services.</p>
 </footer>
 

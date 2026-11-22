@@ -1,6 +1,6 @@
 // Network-first: always fetch fresh when online, fall back to cache when offline.
-const CACHE = "sp-v6";
-const ASSETS = ["./", "index.html", "privacy.html", "style.css", "app.js", "install.js", "logo.svg", "icon.svg", "icon-192.png", "icon-512.png", "manifest.webmanifest"];
+const CACHE = "sp-v7";
+const ASSETS = ["./", "index.html", "privacy.html", "terms.html", "report.html", "connect.html", "style.css", "app.js", "install.js", "logo.svg", "icon.svg", "icon-192.png", "icon-512.png", "manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));

@@ -35,7 +35,7 @@ main section,footer{max-width:760px;margin:auto;padding:34px 22px}
 h1{font:700 clamp(2.3rem,9vw,3.6rem)/1.08 Georgia,serif;margin:12px 0 16px;letter-spacing:-.01em}
 h1 em{font-style:italic;background:linear-gradient(120deg,var(--gold),var(--blush));-webkit-background-clip:text;background-clip:text;color:transparent}
 h2{font:700 1.75rem/1.2 Georgia,serif;margin-bottom:18px}
-.hero{padding-top:46px;min-height:78vh}
+.hero{padding-top:46px;min-height:56vh}
 .hero .tag{color:var(--blush);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
 .hero p{color:var(--mut);max-width:520px;margin-bottom:28px;font-size:17px}
 .hero>*{animation:rise .9s ease both}
