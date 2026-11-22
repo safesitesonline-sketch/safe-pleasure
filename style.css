@@ -89,3 +89,8 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero>*,.sp-name,.sp-line,.sp-shield,.sp-heart,#gate .box{animation-duration:.01s;animation-delay:0s}.sp-shield{stroke-dashoffset:0}.js .rv{opacity:1;transform:none;transition:none}.scroll-hint span{animation:none}}
 #splash{animation:splashOut .8s ease 3.6s forwards}
 @keyframes splashOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+#installBar{position:fixed;left:12px;right:12px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:12px;padding:12px 14px;background:linear-gradient(160deg,#33193f,#1f0f27);border:1px solid var(--gold);border-radius:22px;box-shadow:0 14px 40px rgba(0,0,0,.5);animation:rise .6s ease both}
+#installBar img{border-radius:10px;flex:none}
+#installBar p{flex:1;font-size:13px;line-height:1.4;color:var(--txt)}
+#installBar .btn{padding:10px 20px;font-size:14px;flex:none}
+#installBar .x{background:none;border:0;color:var(--mut);font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
