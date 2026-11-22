@@ -112,3 +112,21 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
 .faq summary::after{content:"+";float:right;color:var(--gold);font-size:20px;line-height:1}
 .faq details[open] summary::after{content:"\2212"}
 .faq p{color:var(--mut);margin-top:10px}
+.article{max-width:760px;margin:auto;padding:30px 22px}
+.article h1{font:700 clamp(1.8rem,7vw,2.5rem)/1.15 Georgia,serif;margin:10px 0 14px}
+.article h2{font:700 1.3rem Georgia,serif;color:var(--gold);margin:28px 0 10px}
+.article p,.article li{color:var(--mut);margin-bottom:10px}
+.article .lead{color:var(--txt);font-size:17px}
+.article ul{padding-left:20px}
+.article li strong{color:var(--txt)}
+.crumb{font-size:13px;color:var(--mut)}
+.crumb a{color:var(--gold);text-decoration:none}
+.article .cta{margin-top:34px;text-align:center}
+.article .cta .btn{margin-top:10px}
+.more{margin-top:22px;font-size:14px}
+.more a,.flinks a{color:var(--gold)}
+.flinks{margin-bottom:8px}
+body.page{padding-bottom:30px}
+.guide-links{display:grid;gap:10px}
+.guide-links a{display:block;padding:14px 18px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;color:var(--txt);text-decoration:none}
+.guide-links a span{display:block;color:var(--mut);font-size:14px}

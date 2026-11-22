@@ -1,5 +1,5 @@
 // Network-first: always fetch fresh when online, fall back to cache when offline.
-const CACHE = "sp-v5";
+const CACHE = "sp-v6";
 const ASSETS = ["./", "index.html", "privacy.html", "style.css", "app.js", "install.js", "logo.svg", "icon.svg", "icon-192.png", "icon-512.png", "manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
