@@ -1,29 +1,52 @@
 (function () {
+  "use strict";
   var bar = document.getElementById("installBar");
-  if (bar === null) return;
-  var standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
-  if (standalone) return;
-  var KEY = "sp_install_dismissed";
-  var dismissed = false;
-  try { dismissed = sessionStorage.getItem(KEY) === "1"; } catch (e) {}
-  if (dismissed) return;
-
-  var ua = navigator.userAgent;
-  var isIOS = /iphone|ipad|ipod/i.test(ua);
-  var inApp = /FBAN|FBAV|Instagram|WhatsApp|Line|Snapchat/i.test(ua);
-  var deferred = null;
+  var headBtn = document.getElementById("install");
   var text = document.getElementById("installText");
   var go = document.getElementById("installGo");
   var close = document.getElementById("installClose");
   var gate = document.getElementById("gate");
+  if (!bar || !text || !go || !close || !gate) return;
+  var standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  if (standalone) return;
+
+  var KEY = "sp_install_dismissed";
+  var WEEK = 7 * 24 * 60 * 60 * 1000;
+  var ua = navigator.userAgent;
+  var isIOS = /iphone|ipad|ipod/i.test(ua);
+  var inApp = /FBAN|FBAV|Instagram|WhatsApp|Line|Snapchat|TikTok/i.test(ua);
+  var deferred = null;
+
+  function dismissedRecently() {
+    try { var t = parseInt(localStorage.getItem(KEY), 10); return t > 0 && Date.now() - t < WEEK; } catch (e) { return false; }
+  }
+  function remember() { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
+  function showBar() { if (!dismissedRecently()) bar.hidden = false; }
+  function hideAll() { bar.hidden = true; if (headBtn) headBtn.hidden = true; }
 
   window.addEventListener("beforeinstallprompt", function (e) {
     e.preventDefault();
     deferred = e;
-    text.textContent = "Add Safe Pleasure to your home screen for quick, private access.";
+    text.textContent = "Install Safe Pleasure: one tap, private, opens like an app.";
     go.hidden = false;
+    if (headBtn) headBtn.hidden = false;
+    if (gate.hidden === true) showBar();
   });
-  window.addEventListener("appinstalled", function () { bar.hidden = true; });
+  window.addEventListener("appinstalled", function () { deferred = null; hideAll(); });
+
+  function install() {
+    if (!deferred) return;
+    var d = deferred;
+    deferred = null;
+    d.prompt();
+    d.userChoice.then(function (c) {
+      hideAll();
+      if (!c || c.outcome !== "accepted") remember();
+    }).catch(function () {});
+  }
+  go.addEventListener("click", install);
+  if (headBtn) headBtn.addEventListener("click", install);
+  close.addEventListener("click", function () { bar.hidden = true; remember(); });
 
   if (inApp) {
     text.textContent = "For the best experience, open this page in Chrome or Safari, then install the app.";
@@ -31,25 +54,12 @@
   } else if (isIOS) {
     text.textContent = "Install: tap the Share button, then Add to Home Screen.";
     go.hidden = true;
-  } else {
-    text.textContent = "Install: open your browser menu, then tap Install app or Add to Home screen.";
-    go.hidden = true;
   }
-
-  go.addEventListener("click", function () {
-    if (deferred === null) return;
-    deferred.prompt();
-    deferred.userChoice.then(function () { deferred = null; bar.hidden = true; });
-  });
-  close.addEventListener("click", function () {
-    bar.hidden = true;
-    try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
-  });
 
   var timer = setInterval(function () {
     if (gate.hidden === true) {
       clearInterval(timer);
-      setTimeout(function () { bar.hidden = false; }, 1500);
+      setTimeout(function () { if (deferred || isIOS || inApp) showBar(); }, 1500);
     }
   }, 500);
 })();

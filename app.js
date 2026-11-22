@@ -44,19 +44,6 @@
     document.querySelectorAll(".rv").forEach((el) => el.classList.add("in"));
   }
 
-  // Install button
-  let deferred = null;
-  const btn = document.getElementById("install");
-  window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; btn.hidden = false; });
-  btn.addEventListener("click", async () => {
-    if (!deferred) return;
-    deferred.prompt();
-    await deferred.userChoice;
-    deferred = null;
-    btn.hidden = true;
-  });
-  window.addEventListener("appinstalled", () => { btn.hidden = true; });
-
   // Offline support
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
