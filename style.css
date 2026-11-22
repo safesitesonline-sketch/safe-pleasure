@@ -94,3 +94,21 @@ footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
 #installBar p{flex:1;font-size:13px;line-height:1.4;color:var(--txt)}
 #installBar .btn{padding:10px 20px;font-size:14px;flex:none}
 #installBar .x{background:none;border:0;color:var(--mut);font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+.sp-shield{fill:url(#spg);stroke:#e8c36a}
+.sp-heart{fill:#fff}
+
+.about{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.portrait{flex:0 0 190px;max-width:100%}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:24px;border:1px solid var(--gold);box-shadow:0 14px 36px rgba(0,0,0,.4);display:block}
+.about-text{flex:1;min-width:230px}
+.about-text p{color:var(--mut);margin-bottom:12px}
+.about-text .vc{color:var(--txt);border-left:2px solid var(--gold);padding-left:12px}
+.check{list-style:none;padding:0;display:grid;gap:10px}
+.check li{padding:13px 16px 13px 44px;position:relative;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;color:var(--txt)}
+.check li::before{content:"";position:absolute;left:16px;top:50%;width:12px;height:7px;margin-top:-6px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+.faq details{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--gold);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--mut);margin-top:10px}
